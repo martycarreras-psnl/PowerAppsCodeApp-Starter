@@ -2,6 +2,36 @@
 
 This is the minimal starter for a [Power Apps Code App](https://learn.microsoft.com/en-us/power-platform/power-apps/maker/canvas-apps/code-apps/overview), generated from the [Power Apps Code App Foundations](https://github.com/martycarreras-psnl/PAppsCAFoundations) template.
 
+## Prerequisites
+
+You need **VS Code** with a coding-agent extension (GitHub Copilot Chat, Claude Code, Cursor, …) signed in — that's how you drive the wizard. All commands below run in the **VS Code terminal** (`` Ctrl+` `` on Windows, `` ⌃` `` on macOS).
+
+**Quick check** — paste this into the terminal to verify everything at once:
+
+```bash
+node --version && git --version && dotnet --version && pac help && python3 --version
+```
+
+If every line prints a version number with no errors, you're ready to run the wizard.
+
+| Tool | Why it's needed | Minimum |
+|------|-----------------|---------|
+| **Node.js** | Runs the wizard and all build tooling (installs `npm`) | v20+ |
+| **Git** | Version control; the wizard commits scaffolded files | 2.x+ |
+| **.NET SDK** | Required by the PAC CLI | 8.x+ |
+| **PAC CLI** | Registers and deploys the Code App to Power Platform (`dotnet tool install -g Microsoft.PowerApps.CLI.Tool`) | latest |
+| **Python 3** | Recommended — powers the Dataverse-skills plugin | 3.x+ |
+| **GitHub CLI** (optional) | Convenience for repo/PR/auth from the terminal | 2.x+ |
+
+**Install notes**
+
+- After installing any tool, **close and reopen the VS Code terminal** so PATH changes take effect.
+- Windows: install Node.js from [nodejs.org](https://nodejs.org) (LTS), .NET from [dotnet.microsoft.com](https://dotnet.microsoft.com/download), and tick **"Add python.exe to PATH"** when installing Python. Use `py -3 --version` if `python3` opens the Microsoft Store.
+- macOS: easiest via [Homebrew](https://brew.sh): `brew install node@20 git dotnet-sdk python@3`.
+- PAC CLI `command not found` after install → add `$HOME/.dotnet/tools` (macOS) or `%USERPROFILE%\.dotnet\tools` (Windows) to PATH, then restart the terminal.
+
+Full step-by-step guide (per-OS, with verification): <https://github.com/martycarreras-psnl/PAppsCAFoundations/blob/main/docs/prerequisite-setup.md>
+
 ## Get started
 
 Run the setup wizard. It scaffolds the Code App, configures auth, provisions the Power Platform solution, and (optionally) registers your first connectors and data sources:
