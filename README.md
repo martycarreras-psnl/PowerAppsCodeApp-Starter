@@ -1,5 +1,13 @@
 # Power Apps Code App — Starter
 
+> # 🚧 UNDER CONSTRUCTION 🚧
+>
+> **We are actively rewiring the instructions to take full advantage of the Dataverse Plugin Skill.**
+>
+> **⚠️ Do not take additional dependencies on this repo or start building with it yet.**
+>
+> **👉 Check back tomorrow for the updated status before using this.**
+
 This is the minimal starter for a [Power Apps Code App](https://learn.microsoft.com/en-us/power-platform/power-apps/maker/canvas-apps/code-apps/overview), generated from the [Power Apps Code App Foundations](https://github.com/martycarreras-psnl/PAppsCAFoundations) template.
 
 ## Prerequisites
