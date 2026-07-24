@@ -30,6 +30,19 @@ If every line prints a version number with no errors, you're ready to run the wi
 - macOS: easiest via [Homebrew](https://brew.sh): `brew install node@20 git dotnet-sdk python@3`.
 - PAC CLI `command not found` after install → add `$HOME/.dotnet/tools` (macOS) or `%USERPROFILE%\.dotnet\tools` (Windows) to PATH, then restart the terminal.
 
+> **On a Microsoft-managed device?** Direct access to the public PyPI and NuGet registries may be blocked by policy (Central Feed Services). If `dotnet tool install` or `pip install` fail with a **connection / DNS / 403** error (not a certificate error), point your package managers at the approved proxy feeds:
+>
+> ```bash
+> # NuGet / dotnet (PAC CLI install)
+> dotnet nuget add source https://packagefeedproxy.microsoft.io/nuget/v3/index.json -n CFS
+> dotnet nuget disable source nuget.org   # only if nuget.org is still listed and blocked
+>
+> # pip (Dataverse-skills SDK: PowerPlatform-Dataverse-Client + pandas)
+> pip config set global.index-url https://packagefeedproxy.microsoft.io/pypi/simple
+> ```
+>
+> Many managed devices already have these configured by policy — in that case no action is needed. These proxies are Microsoft-internal and are not reachable from non-Microsoft networks.
+
 Full step-by-step guide (per-OS, with verification): <https://github.com/martycarreras-psnl/PAppsCAFoundations/blob/main/docs/prerequisite-setup.md>
 
 ## Get started
